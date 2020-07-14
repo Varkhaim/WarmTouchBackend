@@ -22,10 +22,28 @@ public class ShopController {
 
     @CrossOrigin
     @GetMapping("/all")
-    ResponseEntity<?> GetAllItems()
+    ResponseEntity<?> getAll()
     {
         logger.info("ItemRepository: Finding all");
         var allItems = itemRepository.findAll();
+        return ResponseEntity.ok(allItems);
+    }
+
+    @CrossOrigin
+    @GetMapping("/packets")
+    ResponseEntity<?> getAllPackets()
+    {
+        logger.info("ItemRepository: Finding all packets");
+        var allItems = itemRepository.findAllPackets();
+        return ResponseEntity.ok(allItems);
+    }
+
+    @CrossOrigin
+    @GetMapping("/services")
+    ResponseEntity<?> getAllServices()
+    {
+        logger.info("ItemRepository: Finding all services");
+        var allItems = itemRepository.findAllServices();
         return ResponseEntity.ok(allItems);
     }
 }
