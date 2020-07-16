@@ -1,15 +1,12 @@
 package com.mf.warmtouch.services;
 
-import com.mf.warmtouch.model.News;
-import com.mf.warmtouch.model.NewsRepository;
+import com.mf.warmtouch.model.Repositories.NewsRepository;
 import com.mf.warmtouch.model.dtos.NewsDTO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -19,11 +16,6 @@ public class NewsService
 
     NewsService(NewsRepository repository) {
         this.repository = repository;
-    }
-
-    public String TestMethod()
-    {
-        return "TEST";
     }
 
     public List<NewsDTO> findAll()

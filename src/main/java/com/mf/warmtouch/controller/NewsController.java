@@ -1,7 +1,7 @@
 package com.mf.warmtouch.controller;
 
 import com.mf.warmtouch.model.News;
-import com.mf.warmtouch.model.NewsRepository;
+import com.mf.warmtouch.model.Repositories.NewsRepository;
 import com.mf.warmtouch.services.NewsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,12 +22,6 @@ public class NewsController
     {
         this.newsService = newsService;
         this.newsRepository = newsRepository;
-    }
-
-    @GetMapping("/ok")
-    ResponseEntity<?> TestMethod()
-    {
-        return ResponseEntity.ok(newsService.TestMethod());
     }
 
     @GetMapping("/lol")
