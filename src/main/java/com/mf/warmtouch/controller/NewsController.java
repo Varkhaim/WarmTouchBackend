@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 
 @RestController
-@RequestMapping("/test")
+@RequestMapping("/news")
 public class NewsController
 {
     private static final Logger logger = LoggerFactory.getLogger(NewsController.class);
@@ -22,15 +22,6 @@ public class NewsController
     {
         this.newsService = newsService;
         this.newsRepository = newsRepository;
-    }
-
-    @GetMapping("/lol")
-    ResponseEntity<?> Something()
-    {
-        var test1 = newsRepository.findById(0);
-        var test2 = test1.get();
-        var test3 = ResponseEntity.ok(test2);
-        return ResponseEntity.ok(test3);
     }
 
     @CrossOrigin

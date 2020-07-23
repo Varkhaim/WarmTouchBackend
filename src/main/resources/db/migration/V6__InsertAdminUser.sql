@@ -1,2 +1,2 @@
-INSERT INTO users (id, username, password, displayname, active, roles, deleted)
-VALUES (0, 'Admin', 'qwerty123', 'Gosia', 'true', 'ADMIN,USER', 'false');
+INSERT INTO roles(name) VALUES('ROLE_USER');
+INSERT INTO roles(name) VALUES('ROLE_ADMIN');
