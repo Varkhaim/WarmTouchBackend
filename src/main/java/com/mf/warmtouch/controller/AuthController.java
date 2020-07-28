@@ -1,4 +1,4 @@
-package com.mf.warmtouch.authentication;
+package com.mf.warmtouch.controller;
 
 import com.mf.warmtouch.authentication.jwt.JwtTokenProvider;
 import com.mf.warmtouch.authentication.requests.LoginRequest;

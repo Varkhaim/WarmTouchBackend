@@ -5,10 +5,7 @@ import com.mf.warmtouch.services.ShopItemService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/shop")
@@ -47,6 +44,24 @@ public class ShopController {
     {
         logger.info("ItemRepository: Finding all services");
         var allItems = itemRepository.findAllServices();
+        return ResponseEntity.ok(allItems);
+    }
+
+    @CrossOrigin
+    @GetMapping("/categories/{category}")
+    ResponseEntity<?> getAllCategoryItems(@PathVariable("category") String category)
+    {
+        logger.info("ItemRepository: Finding all items of category: " + category);
+        var allItems = itemRepository.findAllItemsOfType(category);
+        return ResponseEntity.ok(allItems);
+    }
+
+    @CrossOrigin
+    @GetMapping("/categories")
+    ResponseEntity<?> getAllCategories()
+    {
+        logger.info("ItemRepository: Finding all types");
+        var allItems = itemRepository.findAllTypes();
         return ResponseEntity.ok(allItems);
     }
 }
