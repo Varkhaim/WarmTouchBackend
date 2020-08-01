@@ -1,6 +1,8 @@
 package com.mf.warmtouch.controller;
 
+import com.mf.warmtouch.model.ItemCategory;
 import com.mf.warmtouch.model.Repositories.ItemRepository;
+import com.mf.warmtouch.model.Repositories.PricelistRepository;
 import com.mf.warmtouch.services.ShopItemService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,10 +14,10 @@ import org.springframework.web.bind.annotation.*;
 public class ShopController {
 
     private static final Logger logger = LoggerFactory.getLogger(ShopController.class);
-    private ItemRepository itemRepository;
+    private PricelistRepository itemRepository;
     private ShopItemService shopItemService;
 
-    ShopController(ItemRepository itemRepository, ShopItemService shopItemService) {
+    ShopController(PricelistRepository itemRepository, ShopItemService shopItemService) {
         this.itemRepository = itemRepository;
         this.shopItemService = shopItemService;
     }
@@ -30,26 +32,8 @@ public class ShopController {
     }
 
     @CrossOrigin
-    @GetMapping("/packets")
-    ResponseEntity<?> getAllPackets()
-    {
-        logger.info("ItemRepository: Finding all packets");
-        var allItems = itemRepository.findAllPackets();
-        return ResponseEntity.ok(allItems);
-    }
-
-    @CrossOrigin
-    @GetMapping("/services")
-    ResponseEntity<?> getAllServices()
-    {
-        logger.info("ItemRepository: Finding all services");
-        var allItems = itemRepository.findAllServices();
-        return ResponseEntity.ok(allItems);
-    }
-
-    @CrossOrigin
     @GetMapping("/categories/{category}")
-    ResponseEntity<?> getAllCategoryItems(@PathVariable("category") String category)
+    ResponseEntity<?> getAllCategoryItems(@PathVariable("category") ItemCategory category)
     {
         logger.info("ItemRepository: Finding all items of category: " + category);
         var allItems = itemRepository.findAllItemsOfType(category);

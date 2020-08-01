@@ -24,23 +24,12 @@ public class ShopItem
     @Column(name = "name")
     private String name;
 
-    @Column(name = "short_description")
-    private String shortDescription;
-
-    @Column(name = "description")
-    private String description;
-
     @Column(name = "price")
     private Long price;
 
     @Column(name = "duration")
     private Long duration;
 
-    @Column(name = "image_link")
-    private String imageLink;
-
-    @Column(name = "type")
-    private String type;
 
     @Column(name = "deleted")
     @ColumnDefault("false")
@@ -49,12 +38,8 @@ public class ShopItem
     public void updateFrom(final ShopItem source)
     {
         name = source.name;
-        shortDescription = source.shortDescription;
-        description = source.description;
         price = source.price;
         duration = source.duration;
-        imageLink = source.imageLink;
-        type = source.type;
     }
 
 }
