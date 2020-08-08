@@ -1,6 +1,6 @@
 package com.mf.warmtouch.model.Repositories;
 
-import com.mf.warmtouch.model.User;
+import com.mf.warmtouch.model.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

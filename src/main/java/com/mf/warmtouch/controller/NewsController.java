@@ -1,6 +1,6 @@
 package com.mf.warmtouch.controller;
 
-import com.mf.warmtouch.model.News;
+import com.mf.warmtouch.model.entities.News;
 import com.mf.warmtouch.model.Repositories.NewsRepository;
 import com.mf.warmtouch.services.NewsService;
 import org.slf4j.Logger;
@@ -25,11 +25,11 @@ public class NewsController
     }
 
     @CrossOrigin
-    @GetMapping("/all")
-    ResponseEntity<?> GetAllNews()
+    @GetMapping("/all/{page}")
+    ResponseEntity<?> GetAllNews(@PathVariable("page") int page)
     {
         logger.info("Finding all");
-        var allNews = newsService.findAll();
+        var allNews = newsService.findAll(page);
         return ResponseEntity.ok(allNews);
     }
 

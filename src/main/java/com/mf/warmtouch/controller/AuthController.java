@@ -6,9 +6,9 @@ import com.mf.warmtouch.authentication.requests.SignUpRequest;
 import com.mf.warmtouch.exception.AppException;
 import com.mf.warmtouch.model.Repositories.RoleRepository;
 import com.mf.warmtouch.model.Repositories.UserRepository;
-import com.mf.warmtouch.model.Role;
-import com.mf.warmtouch.model.RoleName;
-import com.mf.warmtouch.model.User;
+import com.mf.warmtouch.model.entities.Role;
+import com.mf.warmtouch.model.enums.RoleName;
+import com.mf.warmtouch.model.entities.User;
 import com.mf.warmtouch.payload.ApiResponse;
 import com.mf.warmtouch.payload.JwtAuthenticationResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +28,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
-import java.util.Collections;
 
 @RestController
 @RequestMapping("/api/auth")

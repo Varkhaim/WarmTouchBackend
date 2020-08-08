@@ -4,7 +4,7 @@ import com.mf.warmtouch.authentication.CurrentUser;
 import com.mf.warmtouch.authentication.UserPrincipal;
 import com.mf.warmtouch.exception.ResourceNotFoundException;
 import com.mf.warmtouch.model.Repositories.UserRepository;
-import com.mf.warmtouch.model.User;
+import com.mf.warmtouch.model.entities.User;
 import com.mf.warmtouch.payload.UserIdentityAvailability;
 import com.mf.warmtouch.payload.UserProfile;
 import com.mf.warmtouch.payload.UserSummary;

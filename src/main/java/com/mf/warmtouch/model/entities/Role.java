@@ -1,5 +1,6 @@
-package com.mf.warmtouch.model;
+package com.mf.warmtouch.model.entities;
 
+import com.mf.warmtouch.model.enums.RoleName;
 import lombok.Data;
 import org.hibernate.annotations.NaturalId;
 import javax.persistence.*;

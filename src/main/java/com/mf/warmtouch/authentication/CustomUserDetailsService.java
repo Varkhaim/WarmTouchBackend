@@ -1,7 +1,7 @@
 package com.mf.warmtouch.authentication;
 
 import com.mf.warmtouch.model.Repositories.UserRepository;
-import com.mf.warmtouch.model.User;
+import com.mf.warmtouch.model.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

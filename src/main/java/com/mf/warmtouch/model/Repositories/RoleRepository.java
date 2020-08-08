@@ -1,7 +1,7 @@
 package com.mf.warmtouch.model.Repositories;
 
-import com.mf.warmtouch.model.Role;
-import com.mf.warmtouch.model.RoleName;
+import com.mf.warmtouch.model.entities.Role;
+import com.mf.warmtouch.model.enums.RoleName;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

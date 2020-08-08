@@ -1,14 +1,11 @@
-package com.mf.warmtouch.model;
+package com.mf.warmtouch.model.entities;
 
 import lombok.Data;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
-import org.springframework.data.jpa.repository.Query;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
-import java.util.List;
 
 @Data
 @Entity

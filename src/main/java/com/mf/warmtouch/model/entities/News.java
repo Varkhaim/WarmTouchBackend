@@ -1,13 +1,15 @@
-package com.mf.warmtouch.model;
+package com.mf.warmtouch.model.entities;
 
+import com.mf.warmtouch.model.enums.NewsType;
 import lombok.Data;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 
 @Data
 @Entity
@@ -25,6 +27,9 @@ public class News
     private String content;
     @Column(name = "post_date")
     private LocalDateTime postDate;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "type")
+    private NewsType type;
     @Column(name = "deleted")
     @ColumnDefault("false")
     private Boolean deleted;
@@ -34,5 +39,13 @@ public class News
         title = source.title;
         content = source.content;
         postDate = source.postDate;
+        type = source.type;
     }
+
+    public String getPostDate() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL);
+        String date = postDate.format(formatter);
+        return date;
+    }
+
 }

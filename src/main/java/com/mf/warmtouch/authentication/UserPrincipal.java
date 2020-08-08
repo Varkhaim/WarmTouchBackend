@@ -1,7 +1,7 @@
 package com.mf.warmtouch.authentication;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.mf.warmtouch.model.User;
+import com.mf.warmtouch.model.entities.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

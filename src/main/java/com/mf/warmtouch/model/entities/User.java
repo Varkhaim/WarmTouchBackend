@@ -1,4 +1,4 @@
-package com.mf.warmtouch.model;
+package com.mf.warmtouch.model.entities;
 
 import com.mf.warmtouch.model.audit.DateAudit;
 import lombok.Data;

@@ -1,7 +1,6 @@
 package com.mf.warmtouch.controller;
 
-import com.mf.warmtouch.model.ItemCategory;
-import com.mf.warmtouch.model.Repositories.ItemRepository;
+import com.mf.warmtouch.model.enums.ItemCategory;
 import com.mf.warmtouch.model.Repositories.PricelistRepository;
 import com.mf.warmtouch.services.ShopItemService;
 import org.slf4j.Logger;

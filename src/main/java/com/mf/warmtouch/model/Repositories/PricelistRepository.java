@@ -1,8 +1,7 @@
 package com.mf.warmtouch.model.Repositories;
 
-import com.mf.warmtouch.model.ItemCategory;
-import com.mf.warmtouch.model.PricelistItem;
-import com.mf.warmtouch.model.ShopItem;
+import com.mf.warmtouch.model.enums.ItemCategory;
+import com.mf.warmtouch.model.entities.PricelistItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
