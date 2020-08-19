@@ -3,6 +3,7 @@ package com.mf.warmtouch.controller;
 import com.mf.warmtouch.model.Repositories.AboutMeRepository;
 import com.mf.warmtouch.model.Repositories.NewsRepository;
 import com.mf.warmtouch.model.entities.News;
+import com.mf.warmtouch.services.AboutMeService;
 import com.mf.warmtouch.services.NewsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,10 +18,11 @@ public class AboutMeController
 {
     private static final Logger logger = LoggerFactory.getLogger(AboutMeController.class);
     private AboutMeRepository repository;
+    private AboutMeService service;
 
-    AboutMeController(AboutMeRepository aboutMeRepository)
-    {
-        this.repository = aboutMeRepository;
+    AboutMeController(AboutMeRepository repository, AboutMeService service) {
+        this.repository = repository;
+        this.service = service;
     }
 
     @CrossOrigin
@@ -28,7 +30,7 @@ public class AboutMeController
     ResponseEntity<?> GetAllNews()
     {
         logger.info("Getting About Me");
-        var aboutMe = repository.findAll();
+        var aboutMe = service.findAll();
         return ResponseEntity.ok(aboutMe);
     }
 }

@@ -1,7 +1,7 @@
 INSERT INTO aboutme
  (content)
 VALUES
- ('Małgorzata Flont – masażystka i rehabilitantka <img src="./public/gosiek.jpg"></img>'),
+ ('Małgorzata Flont – masażystka i rehabilitantka {gosiek.jpg}'),
  ('Ukończyłam Kolegium Teologiczne w Siedlcach (1994r.)'),
  ('2004r. to przełom w moim życiu, bo znalazłam własną drogę, która jest spełnieniem moich marzeń i powołania. '),
  ('2004 - Wyższa Szkoła Pedagogiczna Towarzystwa Wiedzy Powszechnej w Warszawie – kierunek: pedagogika opiekuńczo-wychowawcza z wychowaniem fizycznym i rehabilitacją narządów ruchu'),

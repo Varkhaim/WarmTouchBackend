@@ -1,5 +1,6 @@
 package com.mf.warmtouch.model.dtos;
 
+import com.mf.warmtouch.model.entities.AboutMeBlock;
 import lombok.Data;
 
 import java.io.Console;
@@ -14,7 +15,17 @@ public class AboutMeDTO {
         this.elements = elements;
     }
 
+    public AboutMeDTO(AboutMeBlock block)
+    {
+        this.elements = convertTextToElements(block.getContent());
+    }
+
     public AboutMeDTO(String textToConvert)
+    {
+        this.elements = convertTextToElements(textToConvert);
+    }
+
+    private List<AboutMeElement> convertTextToElements(String textToConvert)
     {
         List<AboutMeElement> elements = new ArrayList<>();
         String currentType = "TEXT"; // TEXT / IMAGE
@@ -50,8 +61,6 @@ public class AboutMeDTO {
             }
         }
 
-        this.elements = elements;
+        return elements;
     }
-
-
 }

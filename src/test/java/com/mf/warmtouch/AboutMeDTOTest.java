@@ -5,9 +5,11 @@ import com.mf.warmtouch.model.dtos.AboutMeElement;
 import io.jsonwebtoken.lang.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
+@SpringBootTest
 public class AboutMeDTOTest {
 
     @Test
