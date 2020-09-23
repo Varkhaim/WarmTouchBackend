@@ -34,7 +34,16 @@ public class NewsController
     }
 
     @CrossOrigin
-    @PostMapping("/news")
+    @GetMapping("/all")
+    ResponseEntity<?> GetAllNews()
+    {
+        logger.info("Finding all");
+        var allNews = newsService.findAll();
+        return ResponseEntity.ok(allNews);
+    }
+
+    @CrossOrigin
+    @PostMapping("/add")
     ResponseEntity<?> createNews(@RequestBody News toCreate)
     {
         News newNews = newsRepository.save(toCreate);
@@ -48,7 +57,7 @@ public class NewsController
     }
 
     @CrossOrigin
-    @DeleteMapping("/news/{id}")
+    @DeleteMapping("/delete/{id}")
     ResponseEntity<?> deleteNews(@PathVariable("id") int id)
     {
         logger.info("Removing: " + id);
@@ -61,7 +70,7 @@ public class NewsController
     }
 
     @CrossOrigin
-    @PutMapping("/news/{id}")
+    @PutMapping("/edit/{id}")
     ResponseEntity<?> editNews(@PathVariable("id") int id, @RequestBody News editedNews)
     {
         logger.info("Editing: " + id);

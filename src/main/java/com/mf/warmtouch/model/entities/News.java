@@ -14,7 +14,7 @@ import java.time.format.FormatStyle;
 @Data
 @Entity
 @Table(name = "news")
-@SQLDelete(sql = "UPDATE user SET deleted=true WHERE id=?")
+@SQLDelete(sql = "UPDATE news SET deleted=true WHERE id=?")
 @Where(clause = "deleted = false")
 public class News
 {

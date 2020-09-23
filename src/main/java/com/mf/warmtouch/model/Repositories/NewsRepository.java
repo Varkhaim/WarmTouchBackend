@@ -9,6 +9,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface NewsRepository extends JpaRepository<News, Integer>
 {
-    @Override
     Page<News> findAll(Pageable pageable);
 }
